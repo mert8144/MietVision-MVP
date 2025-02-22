@@ -8,50 +8,84 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header mit Uhrzeit und Benutzername -->
+        <header>
+            <div class="header-left">
+                <h1>MietVision</h1>
+            </div>
+            <div class="header-right">
+                <span>21:02:50 Uhr, Sonntag, 09. Januar 2025</span>
+                <span class="user">Hallo Mert <img src="user-icon.png" alt="Benutzerprofil" class="user-icon"></span>
+                <button class="edit-btn">Dashboard Bearbeiten</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
         <nav>
-            <h1>MietVision</h1>
             <ul>
-                <li><a href="#dashboard" class="active">Dashboard</a></li>
-                <li><a href="#documents">Dokumente</a></li>
-                <li><a href="#communications">Kommunikation</a></li>
-                <li><a href="#ai">KI-Funktionen</a></li>
-                <li><a href="#admin">Admin</a></li>
+                <li><a href="#dashboard" class="active"><img src="home-icon.png" alt="Dashboard"> Dashboard</a></li>
+                <li><a href="#units"><img src="units-icon.png" alt="Einheiten"> Einheiten</a></li>
+                <li><a href="#repair-requests"><img src="repair-icon.png" alt="Rep-Anfragen"> Rep-Anfragen</a></li>
+                <li><a href="#tenants"><img src="tenants-icon.png" alt="Mieter"> Mieter</a></li>
+                <li><a href="#messages"><img src="message-icon.png" alt="Nachrichten"> Nachrichten</a></li>
+                <li><a href="#contracts"><img src="contract-icon.png" alt="Verträge"> Verträge</a></li>
+                <li><a href="#invoices"><img src="invoice-icon.png" alt="Rechnungen"> Rechnungen</a></li>
+                <li><a href="#info"><img src="info-icon.png" alt="Infos"> Infos</a></li>
+                <li><a href="#settings"><img src="settings-icon.png" alt="Einstellungen"> Einstellungen</a></li>
             </ul>
         </nav>
+
+        <!-- Dashboard -->
         <section id="dashboard" class="section active">
-            <h2>Dashboard</h2>
             <div class="dashboard-grid">
-                <div class="card"><h3>Immobilien</h3><p id="property-count">0</p></div>
-                <div class="card"><h3>Mietzahlungen</h3><p>Eingegangen: <span id="payments-received">0 €</span></p><p>Ausstehend: <span id="payments-pending">0 €</span></p></div>
-                <div class="card"><h3>Cashflow</h3><p id="cashflow">0 €</p></div>
-                <div class="card"><h3>KPIs</h3><p>Mietrendite: <span id="rental-yield">0%</span></p><p>Leerstand: <span id="vacancy-rate">0%</span></p></div>
+                <!-- Karten wie im Bild -->
+                <div class="card">
+                    <h3>Mietvertrag läuft aus</h3>
+                    <p>Max Mustermann <br> 09.03.2025 <br> Einheit: 4 <br> 67% / 33%</p>
+                    <span class="arrow">></span>
+                </div>
+                <div class="card warning">
+                    <h3>Reparatur Abgeschlossen</h3>
+                    <p>Wasserhahn in Wohnung 2 <br> <span class="check">✓</span></p>
+                </div>
+                <div class="card">
+                    <h3>Anfragen</h3>
+                    <p>4 Einheiten <br> 12 Ungelesen <br> 10 Beantwortet</p>
+                    <span class="arrow">></span>
+                </div>
+                <div class="card">
+                    <h3>Mietpreisentwicklung</h3>
+                    <div class="chart-placeholder">...</div>
+                    <button class="chart-toggle">Monatlich</button>
+                </div>
+                <div class="card notifications">
+                    <h3>Benachrichtigungen</h3>
+                    <p>04 <span class="arrow-down">▼</span></p>
+                    <ul class="notification-list">
+                        <li><span class="red-dot"></span> Besichtigungstermin Herr Mustermann</li>
+                        <li><span class="green-dot"></span> Rep-Anfrage Heinrich (Einheit 33)</li>
+                        <li>Wartungstermin: „Aufzugswartung bestätigt für 12.02.2025“</li>
+                    </ul>
+                </div>
+                <div class="card ki-features">
+                    <h3>KI-Funktionen</h3>
+                    <div class="ki-options">
+                        <button>Objektanalyse</button>
+                        <button>Smart Investment</button>
+                        <button>Predictive Lease</button>
+                        <button>Renewal Assistant</button>
+                        <button>Intelligenter Chatbot</button>
+                        <button>Virtueller Property Manager Assistant</button>
+                    </div>
+                </div>
+                <div class="card observation-list">
+                    <h3>Ihre Beobachtungsliste</h3>
+                    <p>Mustestraße 15, Berlin <br> Marktwert: Schätzung: 350,000 € (+2% im letzten Monat) <br> Renditeberechnung: „Aktuelle Rendite: 4,5% p.a.“ <br> Vorschläge zur Verbesserung durch KI-Analysen.</p>
+                    <div class="rating">★★★★★ (46 Interessenten) ...</div>
+                    <button class="ki-analysis">KI-Analyse</button>
+                    <button class="details">Detaillierte Analysen zeigen</button>
+                </div>
             </div>
-        </section>
-        <section id="documents" class="section">
-            <h2>Dokumentenmanagement</h2>
-            <input type="file" id="upload-doc" multiple>
-            <button onclick="uploadDocuments()">Hochladen</button>
-            <button onclick="signDocument()">Digital unterschreiben</button>
-            <ul id="doc-list"></ul>
-        </section>
-        <section id="communications" class="section">
-            <h2>Kommunikation</h2>
-            <textarea id="message" placeholder="Nachricht eingeben..."></textarea>
-            <button onclick="sendMessage()">Senden</button>
-            <ul id="message-list"></ul>
-        </section>
-        <section id="ai" class="section">
-            <h2>KI-Funktionen</h2>
-            <div class="ai-grid">
-                <div class="card"><h3>Mietpreisempfehlung</h3><p id="rent-suggestion">Berechnung läuft...</p><button onclick="calculateRent()">Berechnen</button></div>
-                <div class="card"><h3>Predictive Maintenance</h3><p id="maintenance-prediction">Vorhersage läuft...</p><button onclick="predictMaintenance()">Vorhersagen</button></div>
-                <div class="card"><h3>Bericht</h3><button onclick="generateReport()">Generieren</button></div>
-            </div>
-        </section>
-        <section id="admin" class="section">
-            <h2>Admin-Panel</h2>
-            <div><h3>Immobilien hinzufügen</h3><input type="text" id="property-name" placeholder="Name der Immobilie"><button onclick="addProperty()">Hinzufügen</button></div>
-            <div><h3>Rollenverwaltung</h3><input type="text" id="user-role" placeholder="Benutzerrolle"><button onclick="addRole()">Rolle hinzufügen</button><ul id="role-list"></ul></div>
         </section>
     </div>
     <script src="script.js"></script>
