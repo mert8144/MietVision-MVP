@@ -1,4 +1,4 @@
-// Simulierte Daten und Interaktionen (optional, da das Design statisch ist)
+// Navigation
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -9,7 +9,7 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// Simulierte Interaktionen für Karten
+// Interaktionen für Karten
 document.querySelectorAll('.card .arrow').forEach(arrow => {
     arrow.addEventListener('click', function() {
         alert('Detailansicht geöffnet!');
@@ -24,4 +24,19 @@ document.querySelector('.notifications p').addEventListener('click', function() 
 document.querySelector('.chart-toggle').addEventListener('click', function() {
     this.textContent = this.textContent === 'Monatlich' ? 'Jährlich' : 'Monatlich';
     alert('Diagrammansicht gewechselt!');
+});
+
+// Simulierte KI-Funktionen
+document.querySelectorAll('.ki-options button').forEach(button => {
+    button.addEventListener('click', function() {
+        alert(`${this.textContent.trim()} aktiviert!`);
+    });
+});
+
+document.querySelector('.ki-analysis').addEventListener('click', function() {
+    alert('KI-Analyse gestartet!');
+});
+
+document.querySelector('.details').addEventListener('click', function() {
+    alert('Detaillierte Analysen angezeigt!');
 });
