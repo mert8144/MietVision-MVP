@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
@@ -26,10 +26,12 @@ header {
     color: white;
     border-radius: 8px 8px 0 0;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header h1 {
     font-size: 24px;
+    font-weight: 600;
 }
 
 .header-right {
@@ -38,16 +40,22 @@ header h1 {
     gap: 15px;
 }
 
+.header-right span {
+    font-size: 14px;
+}
+
 .user {
     display: flex;
     align-items: center;
     gap: 5px;
+    font-weight: 500;
 }
 
 .user-icon {
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    background-color: #ddd; /* Platzhalter für Benutzerbild */
 }
 
 .edit-btn {
@@ -57,6 +65,10 @@ header h1 {
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
 }
 
 .edit-btn:hover {
@@ -68,12 +80,14 @@ nav {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -85,7 +99,9 @@ nav ul li a {
     padding: 8px 15px;
     border-radius: 5px;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 nav ul li a.active {
@@ -93,9 +109,12 @@ nav ul li a.active {
     color: white;
 }
 
-nav ul li a img {
-    width: 16px;
-    height: 16px;
+nav ul li a i {
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    background-color: #e9ecef;
 }
 
 .section {
@@ -116,14 +135,16 @@ nav ul li a img {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    border: 1px solid #e9ecef;
 }
 
 .card h3 {
     color: #007bff;
     font-size: 16px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -156,6 +177,7 @@ nav ul li a img {
     height: 50px;
     background: #e9ecef;
     margin: 10px 0;
+    border-radius: 5px;
 }
 
 .chart-toggle {
@@ -164,6 +186,15 @@ nav ul li a img {
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+}
+
+.chart-toggle:hover {
+    background-color: #dee2e6;
 }
 
 .notifications p {
@@ -171,12 +202,15 @@ nav ul li a img {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    font-weight: 500;
+    color: #007bff;
 }
 
 .notification-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: none; /* Standardmäßig versteckt */
 }
 
 .notification-list li {
@@ -201,20 +235,42 @@ nav ul li a img {
     color: #666;
 }
 
-.ki-features button {
-    display: block;
-    background-color: #e9ecef;
+.ki-features {
+    background: #007bff;
+    color: white;
+}
+
+.ki-features h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.ki-options {
+    display: grid;
+    gap: 5px;
+}
+
+.ki-options button {
+    background-color: rgba(255, 255, 255, 0.1);
     border: none;
     padding: 8px 15px;
     margin: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    color: #007bff;
-    text-align: left;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-.ki-features button:hover {
-    background-color: #dee2e6;
+.ki-options button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ki-options button i {
+    font-size: 14px;
 }
 
 .observation-list {
@@ -225,6 +281,8 @@ nav ul li a img {
 
 .observation-list h3 {
     color: white;
+    font-size: 16px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -232,6 +290,7 @@ nav ul li a img {
     color: white;
     font-size: 14px;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 .rating {
@@ -241,17 +300,26 @@ nav ul li a img {
 }
 
 .observation-list button {
-    background-color: #e9ecef;
-    color: #007bff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
     border: none;
     padding: 8px 15px;
     margin: 5px 0;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 .observation-list button:hover {
-    background-color: #dee2e6;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.observation-list button i {
+    font-size: 14px;
 }
 
 /* Responsive Design */
