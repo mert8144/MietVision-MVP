@@ -5,59 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MietVision - Vermieterplattform</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Für Icons -->
 </head>
 <body>
     <div class="container">
-        <!-- Header mit Uhrzeit und Benutzername -->
+        <!-- Header mit Uhrzeit, Benutzername und Bearbeitungsbutton -->
         <header>
             <div class="header-left">
                 <h1>MietVision</h1>
             </div>
             <div class="header-right">
                 <span>21:02:50 Uhr, Sonntag, 09. Januar 2025</span>
-                <span class="user">Hallo Mert <img src="user-icon.png" alt="Benutzerprofil" class="user-icon"></span>
-                <button class="edit-btn">Dashboard Bearbeiten</button>
+                <span class="user">Hallo Mert <img src="https://via.placeholder.com/30" alt="Benutzerprofil" class="user-icon"></span>
+                <button class="edit-btn">Dashboard Bearbeiten <i class="fas fa-cog"></i></button>
             </div>
         </header>
 
         <!-- Navigation -->
         <nav>
             <ul>
-                <li><a href="#dashboard" class="active"><img src="home-icon.png" alt="Dashboard"> Dashboard</a></li>
-                <li><a href="#units"><img src="units-icon.png" alt="Einheiten"> Einheiten</a></li>
-                <li><a href="#repair-requests"><img src="repair-icon.png" alt="Rep-Anfragen"> Rep-Anfragen</a></li>
-                <li><a href="#tenants"><img src="tenants-icon.png" alt="Mieter"> Mieter</a></li>
-                <li><a href="#messages"><img src="message-icon.png" alt="Nachrichten"> Nachrichten</a></li>
-                <li><a href="#contracts"><img src="contract-icon.png" alt="Verträge"> Verträge</a></li>
-                <li><a href="#invoices"><img src="invoice-icon.png" alt="Rechnungen"> Rechnungen</a></li>
-                <li><a href="#info"><img src="info-icon.png" alt="Infos"> Infos</a></li>
-                <li><a href="#settings"><img src="settings-icon.png" alt="Einstellungen"> Einstellungen</a></li>
+                <li><a href="#dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#units"><i class="fas fa-building"></i> Einheiten</a></li>
+                <li><a href="#repair-requests"><i class="fas fa-tools"></i> Rep-Anfragen</a></li>
+                <li><a href="#tenants"><i class="fas fa-users"></i> Mieter</a></li>
+                <li><a href="#messages"><i class="fas fa-envelope"></i> Nachrichten</a></li>
+                <li><a href="#contracts"><i class="fas fa-file-contract"></i> Verträge</a></li>
+                <li><a href="#invoices"><i class="fas fa-receipt"></i> Rechnungen</a></li>
+                <li><a href="#info"><i class="fas fa-info-circle"></i> Infos</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Einstellungen</a></li>
             </ul>
         </nav>
 
         <!-- Dashboard -->
         <section id="dashboard" class="section active">
             <div class="dashboard-grid">
-                <!-- Karten wie im Bild -->
+                <!-- Mietvertrag läuft aus -->
                 <div class="card">
                     <h3>Mietvertrag läuft aus</h3>
                     <p>Max Mustermann <br> 09.03.2025 <br> Einheit: 4 <br> 67% / 33%</p>
                     <span class="arrow">></span>
                 </div>
+
+                <!-- Reparatur Abgeschlossen -->
                 <div class="card warning">
                     <h3>Reparatur Abgeschlossen</h3>
                     <p>Wasserhahn in Wohnung 2 <br> <span class="check">✓</span></p>
                 </div>
+
+                <!-- Anfragen -->
                 <div class="card">
                     <h3>Anfragen</h3>
                     <p>4 Einheiten <br> 12 Ungelesen <br> 10 Beantwortet</p>
                     <span class="arrow">></span>
                 </div>
+
+                <!-- Mietpreisentwicklung -->
                 <div class="card">
                     <h3>Mietpreisentwicklung</h3>
                     <div class="chart-placeholder">...</div>
-                    <button class="chart-toggle">Monatlich</button>
+                    <button class="chart-toggle">Monatlich <i class="fas fa-chart-line"></i></button>
                 </div>
+
+                <!-- Benachrichtigungen -->
                 <div class="card notifications">
                     <h3>Benachrichtigungen</h3>
                     <p>04 <span class="arrow-down">▼</span></p>
@@ -67,23 +76,27 @@
                         <li>Wartungstermin: „Aufzugswartung bestätigt für 12.02.2025“</li>
                     </ul>
                 </div>
+
+                <!-- KI-Funktionen -->
                 <div class="card ki-features">
                     <h3>KI-Funktionen</h3>
                     <div class="ki-options">
-                        <button>Objektanalyse</button>
-                        <button>Smart Investment</button>
-                        <button>Predictive Lease</button>
-                        <button>Renewal Assistant</button>
-                        <button>Intelligenter Chatbot</button>
-                        <button>Virtueller Property Manager Assistant</button>
+                        <button><i class="fas fa-search"></i> Objektanalyse</button>
+                        <button><i class="fas fa-chart-line"></i> Smart Investment</button>
+                        <button><i class="fas fa-file-alt"></i> Predictive Lease</button>
+                        <button><i class="fas fa-sync"></i> Renewal Assistant</button>
+                        <button><i class="fas fa-comment"></i> Intelligenter Chatbot</button>
+                        <button><i class="fas fa-cloud"></i> Virtueller Property Manager Assistant</button>
                     </div>
                 </div>
+
+                <!-- Beobachtungsliste -->
                 <div class="card observation-list">
                     <h3>Ihre Beobachtungsliste</h3>
                     <p>Mustestraße 15, Berlin <br> Marktwert: Schätzung: 350,000 € (+2% im letzten Monat) <br> Renditeberechnung: „Aktuelle Rendite: 4,5% p.a.“ <br> Vorschläge zur Verbesserung durch KI-Analysen.</p>
                     <div class="rating">★★★★★ (46 Interessenten) ...</div>
-                    <button class="ki-analysis">KI-Analyse</button>
-                    <button class="details">Detaillierte Analysen zeigen</button>
+                    <button class="ki-analysis"><i class="fas fa-brain"></i> KI-Analyse</button>
+                    <button class="details"><i class="fas fa-arrow-right"></i> Detaillierte Analysen zeigen</button>
                 </div>
             </div>
         </section>
